@@ -1,0 +1,14 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+<div class="p-3 mb-2 bg-secondary text-white"  style="width:70rem;margin-left:170px; margin-top:40px;">
+
+<h3 class="text-warning" style="text-align:center"> Search Results</h3>
+<div class='card-content'>
+{% for task in task_list%}
+{% if task_list.is_empty%}
+<h5 class="text-warning">No search results found</h5>
+{% endif %}
+<h6 class="text-warning" >Task:</h6> {{task.task}}<br>
+<h6 class="text-warning" >Description: </h6>{{task.description}}<br>
+<h6 class="text-warning" style="margin-top:10px;" >Completed: </h6>{{task.completed}}<br><hr>
+{%endfor%}
